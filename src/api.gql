@@ -1,0 +1,84 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Customer {
+  email: String
+  id: String!
+  mobile: String
+  name: String
+}
+
+input CustomerDetailDto {
+  email: String
+  mobile: Float
+  name: String
+}
+
+type Employee {
+  Address: String
+  CompanyName: String
+  District: String
+  Name: String
+  PhoneNumber: Float
+  archived: Boolean
+  id: String!
+}
+
+input EmployeeDetailDto {
+  Address: String
+  CompanyName: String
+  District: String
+  Name: String
+  PhoneNumber: Float
+  archived: Boolean
+}
+
+type Mutation {
+  createContact(createCustomer: CustomerDetailDto!): Customer!
+  createEmployeeContact(createEmployee: EmployeeDetailDto!): Employee!
+  createEmployeePrisma(createEmployee: EmployeeDetailDto!): Employee!
+  createStudentPrisma(createStudent: studentDTO!): Student!
+  deleteContact(id: String!): Customer!
+  deleteEmployeeContact(id: String!): Employee!
+  deletePrismaEmployee(id: String!): Employee!
+  deletePrismaStudent(id: String!): Student!
+  updateOneEmployee(data: EmployeeDetailDto!, id: String!): Employee!
+  updatePrismaEmployee(id: String!, updateData: EmployeeDetailDto!): Employee!
+  updatePrismaStudent(id: String!, updateData: studentDTO!): Student!
+}
+
+type Query {
+  countArchivedEmployees: Float!
+  countArchivedStudents: Float!
+  countUnArchivedStudents: Float!
+  countUnarchivedEmployees: Float!
+  getAllCustomers: [Customer!]!
+  getAllEmployees: [Employee!]!
+  getAllPrismaEmployees: [Employee!]!
+  getAllPrismaStudent: [Student!]!
+  getAndCondition(search: String!): [Employee!]
+  getCustomersByPhones(mobiles: [String!]!): [Customer!]
+  getEmployeesByPhones(mobiles: [String!]!): [Employee!]
+  getOrCondition(search: String!): [Employee!]
+}
+
+type Student {
+  Employeeid: String
+  StudentAddress: String
+  StudentDistrict: String
+  StudentName: String
+  StudentNotes: String
+  StudentSubject: String
+  archived: Boolean
+  id: String!
+}
+
+input studentDTO {
+  Employeeid: String
+  StudentAddress: String
+  StudentDistrict: String
+  StudentName: String
+  StudentNotes: String
+  StudentSubject: String
+}
